@@ -1,0 +1,42 @@
+#Variable GLOBAL
+global contador
+contador = 0
+
+def MayMen(datoIngresado, contador):
+    global may
+    global men
+
+    if (contador == 1):
+        may = datoIngresado
+        men = datoIngresado
+    elif(datoIngresado>may):
+        may = datoIngresado
+    else:
+        if(datoIngresado<men):
+            men = datoIngresado
+
+def Ejecutor():
+    global contador
+
+    while True:
+        print(50 * '*')
+        datoIngresado = eval(input("Ingrese dato:\t\t"))
+        contador = contador + 1
+
+        MayMen (datoIngresado, contador) #invoca a funcion MayMer
+
+        while True:
+            rpta = input("Desea ingersar otro dato? (S/N):")
+            rptMayusc = rpta.upper()
+            if(rptMayusc != 'S' and rptMayusc != 'N'):
+                print("ERROR. Vuelve a ingrear.")
+            else:
+                break
+
+        if rptMayusc == "S":
+            
+        if(rptMayusc !='$'):
+            print("El dato mayor es:", may)
+            break
+
+Ejecutor()
